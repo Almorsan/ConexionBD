@@ -1,7 +1,11 @@
-
+//utlizamos esta clase para introducir los datos de un videojuego en la
+//base de datos con mayor comodidad
 package com.mycompany.conexionbd;
 
-import java.sql.Date;
+import java.util.Date;
+import java.time.LocalDate;
+
+
 
 
 public class Videojuego {
@@ -10,16 +14,16 @@ public class Videojuego {
     
     String categoria;
     
-    Date fecha_Lanzamiento;
+    LocalDate fecha;
     
     String compania;
     
     float precio;
 
-    public Videojuego(String nombre, String categoria, Date fecha_Lanzamiento, String compania, float precio) {
+    public Videojuego(String nombre, String categoria, LocalDate fecha, String compania, float precio) {
         this.nombre = nombre;
         this.categoria = categoria;
-        this.fecha_Lanzamiento = fecha_Lanzamiento;
+        this.fecha = fecha;
         this.compania = compania;
         this.precio = precio;
     }
@@ -40,12 +44,12 @@ public class Videojuego {
         this.categoria = categoria;
     }
 
-    public Date getFecha_Lanzamiento() {
-        return fecha_Lanzamiento;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setFecha_Lanzamiento(Date fecha_Lanzamiento) {
-        this.fecha_Lanzamiento = fecha_Lanzamiento;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public String getCompania() {
@@ -65,8 +69,7 @@ public class Videojuego {
     }
     
     
-    
-    
+
     
     
 }
