@@ -6,8 +6,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.DateTimeException;
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 
 public class ConexionBD {
 
@@ -247,7 +249,8 @@ public class ConexionBD {
         int dia = 0;
         //ya que el nombre es un campo obligatorio, comprobaremos
         //que el usuario lo ha introducido 
-        while (longitud == 0) {
+       try {
+            while (longitud == 0) {
             System.out.println("Dime el nombre del videojuego: ");
             nombre = teclado.nextLine().trim();
             longitud = nombre.length();
@@ -287,6 +290,11 @@ public class ConexionBD {
         
         //llamamos al método nuevoRegistro
         nuevoRegistro(juego);
+       } catch (InputMismatchException e) {
+           System.out.println("Error, se ha introducido un dato no válido: "+e);
+    } catch (DateTimeException e) {
+           System.out.println("Error, formato de fecha incorrecto: "+e);
+    }
 
        
 
