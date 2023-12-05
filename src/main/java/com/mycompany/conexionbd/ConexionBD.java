@@ -65,7 +65,7 @@ public class ConexionBD {
         System.out.println("------------------------");
         
         //borramos un videojuego de la base de datos
-        //mediante un nombre pasado por teclado
+        //mediante un nombre pasado como parámetro
         String nombre2 = "Megaman X";
 
         //si no está comentado este método, borrará el videojuego creado anteriormente
@@ -125,7 +125,7 @@ public class ConexionBD {
                 System.out.println("No se ha encontrado videojuego con el nombre " + nombre);
             }
 
-            sentencia.close(); //cerramos la conexió
+            sentencia.close(); //cerramos la conexión
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -169,7 +169,7 @@ public class ConexionBD {
 
     public static void nuevoRegistro(Videojuego juego) {
          //añadimos un nuevo registro a la base de datos 
-         //mediante un objeto de tipo Videojuego pasado por teclado
+         //mediante un objeto de tipo Videojuego pasado como parámetro
         
        //construimos la sentencia ayudándonos de los getters y setters 
        //de la clase videojuego
@@ -197,7 +197,7 @@ public class ConexionBD {
     public static boolean EliminarRegistro(String nombre) {
         //con este método, eliminamos un videojuego
         //de la base de datos mediante un nombre
-        //pasado por parámetro
+        //pasado como parámetro
         //devolvemos un boolean que será true si
         //se elimina y false si no
 
@@ -205,7 +205,7 @@ public class ConexionBD {
 
         String QUERY = "DELETE FROM videojuegos WHERE Nombre='" + nombre + "'";
         //la sentencia de arriba borrará el videjuego con el nombre pasado
-        //por parámetro
+        //como parámetro
 
         System.out.println("Borrando el videojuego con el nombre " + nombre);
 
